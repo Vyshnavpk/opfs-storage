@@ -1,6 +1,6 @@
 {
   "name": "opfs-storage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "OPFSStorage is a library for managing files and directories using the Origin Private File System (OPFS) with a built-in event-handeling system.",
   "main": "src/OPFSStorage.js",
   "scripts": {
