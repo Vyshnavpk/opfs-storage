@@ -76,7 +76,7 @@ export default class OPFSStorage extends EventEmitter {
     try {
       const rootDir = this.root;
       if (dirName && this.directories[dirName]) {
-        const dir = await rootDir.getDirectoryHandle(dirName);
+        const dir = await rootDir.getDirectoryHandle(dirName, { create: true });
         await dir.getFileHandle(fileName, { create: true });
         this.directories[dirName].push(fileName);
         console.log(`File "${fileName}" created in directory "${dirName}".`);
@@ -132,7 +132,7 @@ export default class OPFSStorage extends EventEmitter {
       const rootDir = this.root;
       let file;
       if (dirName) {
-        const dir = await rootDir.getDirectoryHandle(dirName);
+        const dir = await rootDir.getDirectoryHandle(dirName, { create: true });
         file = await dir.getFileHandle(fileName, { create: true });
       } else {
         file = await rootDir.getFileHandle(fileName, { create: true });
